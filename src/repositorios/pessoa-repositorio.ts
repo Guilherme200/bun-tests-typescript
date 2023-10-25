@@ -30,12 +30,12 @@ export class PessoaRepositorio {
   }
 
   delete(id: string): boolean {
-    const pessoa = this.buscarPorId(id);
-    if (pessoa) {
-      this.pessoas = this.pessoas.filter(item => item.id === id)
-      return true
+    const index = this.pessoas.findIndex((pessoa) => pessoa.id === id);
+    if (index !== -1) {
+      this.pessoas.splice(index, 1); // Remove um elemento a partir do índice encontrado
+      return true;
     }
-    return false
+    return false;
   }
 
   editarPerfil(id: string): Pessoa | null {

@@ -1,5 +1,5 @@
 import express from "express";
-import {PessoaRepositorio} from './src/repositorios/pessoa-repositorio.ts';
+import {PessoaRepositorio} from './src/repositorios/pessoa-repositorio'
 
 const app = express();
 const port = 4000;
@@ -28,3 +28,5 @@ app.delete("/:id", (req, res) => {
 });
 
 app.listen(port);
+
+export default app;

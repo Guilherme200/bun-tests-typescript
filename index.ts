@@ -1,12 +1,30 @@
 import express from "express";
-import {Pessoa} from "./src/pessoa/pessoa.ts";
+import {PessoaRepositorio} from './src/repositorios/pessoa-repositorio.ts';
 
 const app = express();
 const port = 4000;
+app.use(express.json());
+
+const respositorio = (new PessoaRepositorio())
 
 app.get("/", (req, res) => {
-  const pessoa = new Pessoa({nome: 'teste', email: 'teste@email.com'});
-  res.send(pessoa);
+  res.send(respositorio.buscarTodas());
+});
+
+app.post("/", (req, res) => {
+  const data = req.body;
+  res.send(respositorio.criar(data));
+});
+
+app.put("/:id", (req, res) => {
+  const data = req.body;
+  const id = req.params.id;
+  res.send(respositorio.editar(id, data));
+});
+
+app.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  res.send(respositorio.delete(id));
 });
 
 app.listen(port);

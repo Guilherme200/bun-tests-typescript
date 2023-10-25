@@ -1,5 +1,5 @@
-import {Id} from "../Id/Id";
-import {PessoaInterface, PessoaProp} from "./PessoaInterface.ts";
+import {Id} from '@/Id/Id'
+import {PessoaInterface, PessoaProp} from './PessoaInterface'
 
 export class Pessoa implements PessoaInterface {
   public id?: string;

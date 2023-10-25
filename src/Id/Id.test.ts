@@ -1,6 +1,6 @@
 import {describe, test, expect} from 'bun:test'
-import {Id} from './Id';
-import {validate} from "uuid"
+import {validate} from 'uuid'
+import {Id} from '@/Id/Id'
 
 describe('ID', () => {
   test('Gerar id único', () => {

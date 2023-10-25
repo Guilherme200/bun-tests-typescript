@@ -1,5 +1,5 @@
-import {Pessoa} from "../pessoa/pessoa.ts";
-import {PessoaProp} from "../pessoa/PessoaInterface.ts";
+import {Pessoa} from '@/pessoa/pessoa';
+import {PessoaProp} from '@/pessoa/PessoaInterface';
 
 export class PessoaRepositorio {
   private pessoas: Pessoa[] = [];

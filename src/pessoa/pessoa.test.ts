@@ -1,4 +1,4 @@
-import {Pessoa} from './pessoa'
+import {Pessoa} from '@/pessoa/pessoa'
 import {describe, test, expect} from 'bun:test'
 
 describe('Pessoa', () => {
